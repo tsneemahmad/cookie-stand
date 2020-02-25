@@ -1,0 +1,54 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+header {
+    background-color: salmon;
+    opacity: .6;
+    color: seashell;
+    padding: 20px;
+    height: 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+h1 {
+    float: left;
+    font-size: 40px;
+}
+
+header nav{
+    float: right;
+padding: 0 30px;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 12px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+header nav ul a{
+    color: #fff;
+text-decoration: none;
+}
+
+main section #loc {
+    padding-top: 100px;
+    margin: 10px;
+    font-size: 20px;
+
+}
+
+main section h4{
+margin: 10px;
+padding-top: 30px;
+padding-left: 10px ;
+color: salmon;
+}
+
+main section ul li{
+    margin-left: 10px;
+}
