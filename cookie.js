@@ -58,22 +58,6 @@ Cookies.prototype.render = function () {
     li1.textContent = `Total: ${this.total} cookies`;
 }
 
-// var table1 = document.createElement('table');
-// container.appendChild(table1);
-// for (var i=0; i<)
-// var tr1 = document.createElement('tr');
-// table1.appendChild(tr1);
-
-// var tr2 = document.createElement('tr');
-// table1.appendChild(tr2);
-// var tr3 = document.createElement('tr');
-// table1.appendChild(tr3);
-// var tr4 = document.createElement('tr');
-// table1.appendChild(tr4);
-// var tr5 = document.createElement('tr');
-// table1.appendChild(tr5);
-// var tr6 = document.createElement('tr');
-// table1.appendChild(tr6);
 
 
 
