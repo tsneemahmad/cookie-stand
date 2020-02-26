@@ -81,8 +81,22 @@ function footer (){
     var trE3 = document.createElement('tr');
     tableEl.appendChild(trE3);
     trE3.textContent = 'Totals';
+    for (var i=0; i<hrs.length; i++) {
+        var hrstotal= 0;
+        for (var f=0; f<locations.length; f++) {
+            hrstotal+= locations[f].hrs[i];
+        }
+    }
     var tdE3 = document.createElement('td');
     trE3.appendChild(tdE3);
+    tdE3.textContent = locations[f].cookies[k];
+    var totalSum = 0;
+    for (var a=0; a<locations.length; a++) {
+        totalSum+= locations[f].add 
+    }
+    var tdE4 = document.createElement('td');
+    trE3.appendChild(tdE4);
+    tdE4.textContent = locations[f].cookies[k];
 }
 
 
@@ -100,6 +114,23 @@ for (var i = 0; i < locations.length; i++) {
     locations[i].render();
 }
 footer();
+
+var locationsForm = document.getElementById('Locations');
+locationsForm.addEventListener('submit', function (event){
+    event.preventDefault;
+    console.log(event.target);
+    var loc = event.target.location.value;
+    console.log(loc);
+    var miniCust = event.target.minCust.value;
+    var maxiCust = event.target.maxCust.value;
+    var avrgcookies = event.target.avgCookies.value;
+    var locObj = newLoc()
+    locObj.randomCust();
+    locObj.cookiePrHr();
+    locObj.totalcookie();
+     
+}
+)
 
 
 
