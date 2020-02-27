@@ -15,13 +15,15 @@
                 <input type="text" id="location">
                 <br>
                 <label for="minCust">minnimum custmor</label>
-                <input type="text" id="minCust">
+                <input type="number" id="minCust">
                 <br>
                 <label for="maxCust">maximum custmor</label>
-                <input type="text"  id="maxCust">
+                <input type="number"  id="maxCust" name="custmor" min="maxCust> minCust">
                 <br>
                 <label for="avgCookies">average cookies</label>
-                <input type="text" id="avgCookies">
+                <input type="number" id="avgCookies" pattern="">
+                <br>
+                <input type="submit">
             </fieldset>
         </form>
         <script src="cookie.js"></script>

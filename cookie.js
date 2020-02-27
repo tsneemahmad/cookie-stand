@@ -97,6 +97,12 @@ function footer() {
     var tdE6 = document.createElement('td');
     trE3.appendChild(tdE6);
     tdE6.textContent = totalSum;
+
+    var trE4 = document.createElement('tr');
+    tableEl.appendChild(trE4);
+    var tdE7 = document.createElement('td');
+    trE4.appendChild(tdE7);
+    tdE7.textContent = loc;
 }
 
 
@@ -118,17 +124,17 @@ footer();
 
 var locationsForm = document.getElementById('Locations');
 locationsForm.addEventListener('submit', function (event) {
-    event.preventDefault;
-    console.log(event.target);
+    // event.preventDefault;
     var loc = event.target.location.value;
+    console.log(event.target);
     console.log(loc);
     var miniCust = event.target.minCust.value;
     var maxiCust = event.target.maxCust.value;
     var avrgcookies = event.target.avgCookies.value;
-    var locObj = newLoc()
-    locObj.randomCust();
-    locObj.cookiePrHr();
-    locObj.totalcookie();
+    var cookiesObj = new Cookies(location,minCust,maxCust,avgCookie);
+    cookiesObj.randomCust();
+    cookiesObj.cookiePrHr();
+    cookiesObj.totalcookie();
 
 }
 )
