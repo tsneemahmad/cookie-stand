@@ -38,7 +38,7 @@ var article1 = document.createElement('article');
 var tableEl = document.createElement('table');
 article1.appendChild(tableEl);
 
-function header () {
+function header() {
     var container = document.getElementById('seattleCookies');
     container.appendChild(article1);
     var trEl = document.createElement('tr');
@@ -71,9 +71,9 @@ Cookies.prototype.render = function () {
         trE2.appendChild(tdE2);
         tdE2.textContent = this.cookies[m];
     }
-    var tdE4 = document.createElement('td');
-        trE2.appendChild(tdE4);
-        tdE4.textContent = this.total;
+    var tdE3 = document.createElement('td');
+    trE2.appendChild(tdE3);
+    tdE3.textContent = this.total;
 }
 
 
@@ -116,23 +116,23 @@ for (var i = 0; i < locations.length; i++) {
 }
 footer();
 
+
 var locationsForm = document.getElementById('Locations');
-locationsForm.addEventListener('submit', function (event){
-    event.preventDefault;
-    console.log(event.target);
+locationsForm.addEventListener('submit', function (event) {
+    // event.preventDefault;
     var loc = event.target.location.value;
+    console.log(event.target);
     console.log(loc);
-    var miniCust = event.target.minCust.value;
-    var maxiCust = event.target.maxCust.value;
-    var avrgcookies = event.target.avgCookies.value;
-    var locObj = newLoc()
-    locObj.randomCust();
-    locObj.cookiePrHr();
-    locObj.totalcookie(); 
+    var miniCust = parseInt(event.target.minCust.value);
+    var maxiCust = parseInt(event.target.maxCust.value);
+    var avrgcookies = parseFloat(event.target.avgCookies.value);
+    var cookiesObj = new Cookies(location,minCust,maxCust,avgCookie);
+    cookiesObj.randomCust();
+    cookiesObj.cookiePrHr();
+    cookiesObj.totalcookie();
+
 }
 )
-
-
 
 
 
