@@ -38,7 +38,7 @@ var article1 = document.createElement('article');
 var tableEl = document.createElement('table');
 article1.appendChild(tableEl);
 
-function header () {
+function header() {
     var container = document.getElementById('seattleCookies');
     container.appendChild(article1);
     var trEl = document.createElement('tr');
@@ -71,18 +71,32 @@ Cookies.prototype.render = function () {
         trE2.appendChild(tdE2);
         tdE2.textContent = this.cookies[m];
     }
-    var tdE4 = document.createElement('td');
-        trE2.appendChild(tdE4);
-        tdE4.textContent = this.total;
+    var tdE3 = document.createElement('td');
+    trE2.appendChild(tdE3);
+    tdE3.textContent = this.total;
 }
 
 
-function footer (){
+function footer() {
     var trE3 = document.createElement('tr');
     tableEl.appendChild(trE3);
-    trE3.textContent = 'Totals';
-    var tdE3 = document.createElement('td');
-    trE3.appendChild(tdE3);
+    var tdE4 = document.createElement('td');
+    trE3.appendChild(tdE4);
+    tdE4.textContent = 'Totals';
+    var totalSum = 0;
+    for (var i = 0; i < hrs.length; i++) {
+        var hrsTotal = 0; 
+        for (var f = 0; f < locations.length; f++) {
+            hrsTotal += locations[f].cookies[i];
+        }
+        totalSum+=hrsTotal;
+        var tdE5 = document.createElement('td');
+        trE3.appendChild(tdE5);
+        tdE5.textContent = hrsTotal;
+    }
+    var tdE6 = document.createElement('td');
+    trE3.appendChild(tdE6);
+    tdE6.textContent = totalSum;
 }
 
 
@@ -102,6 +116,22 @@ for (var i = 0; i < locations.length; i++) {
 footer();
 
 
+var locationsForm = document.getElementById('Locations');
+locationsForm.addEventListener('submit', function (event) {
+    event.preventDefault;
+    console.log(event.target);
+    var loc = event.target.location.value;
+    console.log(loc);
+    var miniCust = event.target.minCust.value;
+    var maxiCust = event.target.maxCust.value;
+    var avrgcookies = event.target.avgCookies.value;
+    var locObj = newLoc()
+    locObj.randomCust();
+    locObj.cookiePrHr();
+    locObj.totalcookie();
+
+}
+)
 
 
 
