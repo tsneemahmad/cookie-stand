@@ -74,6 +74,10 @@ Cookies.prototype.render = function () {
     var tdE3 = document.createElement('td');
     trE2.appendChild(tdE3);
     tdE3.textContent = this.total;
+
+    // var trE4 = document.createElement('tr');
+    // tableEl.appendChild(trE4);
+    // trE4.textContent =
 }
 
 
@@ -119,17 +123,29 @@ footer();
 
 var locationsForm = document.getElementById('Locations');
 locationsForm.addEventListener('submit', function (event) {
-    // event.preventDefault;
-    var loc = event.target.location.value;
+    event.preventDefault;
+    console.log(event);
     console.log(event.target);
+    var loc = event.target.location.value;
     console.log(loc);
     var miniCust = parseInt(event.target.minCust.value);
+    console.log(miniCust);
     var maxiCust = parseInt(event.target.maxCust.value);
+    console.log(maxiCust);
     var avrgcookies = parseFloat(event.target.avgCookies.value);
-    var cookiesObj = new Cookies(location,minCust,maxCust,avgCookie);
-    cookiesObj.randomCust();
-    cookiesObj.cookiePrHr();
-    cookiesObj.totalcookie();
+    console.log(avrgcookies);
+    if (maxiCust <= miniCust) {
+        alert("input a higher number than minnimum custmor please");
+    } else {
+        var CookiesObj = new Cookies(loc,miniCust,maxiCust,avrgcookies);
+        CookiesObj.randomCust();
+        CookiesObj.cookiePrHr();
+        CookiesObj.totalcookie();
+        tableEl.innerHTML='';
+        header();
+        CookiesObj.render()
+        footer();
+    }
 
 }
 )
@@ -385,6 +401,7 @@ locationsForm.addEventListener('submit', function (event) {
 //         for (var i = 0; i < hrs.length; i++) {
 //             this.rand.push(Math.floor(Math.random() * (this.maxCust - this.minCust))+ this.minCust);
 
+
 //         }
 //     },
 //     cookies: [],
@@ -420,14 +437,3 @@ locationsForm.addEventListener('submit', function (event) {
 //             li1.textContent = `${hrs[i]}: ${this.cookies[i]} cookies`;
 //         }
 
-//         var li1 = document.createElement('li');
-//         ull1.appendChild(li1);
-//         li1.textContent = `Total: ${this.total} cookies`;
-//     }
-// }
-
-// Lima.randomCust();
-// Lima.cookiePrHr();
-// Lima.totalcookie();
-// Lima.render();
-// console.log(Lima);
