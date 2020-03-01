@@ -123,7 +123,7 @@ footer();
 
 var locationsForm = document.getElementById('Locations');
 locationsForm.addEventListener('submit', function (event) {
-    event.preventDefault;
+    event.preventDefault();
     console.log(event);
     console.log(event.target);
     var loc = event.target.location.value;
@@ -138,13 +138,13 @@ locationsForm.addEventListener('submit', function (event) {
         alert("input a higher number than minnimum custmor please");
     } else {
         var CookiesObj = new Cookies(loc,miniCust,maxiCust,avrgcookies);
+        tableEl.removeChild(tableEl.lastChild);
         CookiesObj.randomCust();
         CookiesObj.cookiePrHr();
         CookiesObj.totalcookie();
-        tableEl.innerHTML='';
-        header();
         CookiesObj.render()
         footer();
+
     }
 
 }
